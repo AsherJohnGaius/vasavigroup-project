@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price - Vasavi Group</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS styles */
+        .card {
+            margin: 20px;
+            text-align: center;
+        }
+        .lock-emoji {
+            font-size: 48px;
+        }
+        .unlock-button {
+            background-color: #007BFF; /* Change the button color to your preference */
+            color: #fff;
+        }
+        .unlock-button:hover {
+            background-color: #0056b3; /* Change the button color on hover */
+        }
+        .request-callback-button {
+            background-color: #007BFF; /* Change the button color to your preference */
+            color: #fff;
+        }
+        .request-callback-button:hover {
+            background-color: #0056b3; /* Change the button color on hover */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/atlantis-logo.png" alt="Atlantis Logo" width="50"> Vasavi Group
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="amenities.html">Amenities</a>
+                    </li>
+                    <!-- Add other navigation links here -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Price</h1>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <p class="card-text">Square Footage: <span id="sqft1"></span></p>
+                    <span class="lock-emoji">🔒</span>
+                    <button class="btn unlock-button" data-card="1">Unlock the Price</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <p class="card-text">Square Footage: <span id="sqft2"></span></p>
+                    <span class="lock-emoji">🔒</span>
+                    <button class="btn unlock-button" data-card="2">Unlock the Price</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <p class="card-text">Square Footage: <span id="sqft3"></span></p>
+                    <span class="lock-emoji">🔒</span>
+                    <button class="btn unlock-button" data-card="3">Unlock the Price</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- "Request a Call Back" link at the bottom of the page -->
+    <div class="container text-center mb-5">
+        <a href="request-call-back.html" class="btn request-callback-button">Request a Call Back</a>
+    </div>
+
+    <!-- JavaScript to generate random square footage values -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            for (let i = 1; i <= 3; i++) {
+                const sqftElement = document.getElementById(`sqft${i}`);
+                sqftElement.textContent = getRandomSquareFootage();
+            }
+        });
+
+        function getRandomSquareFootage() {
+            return (Math.random() * 2000 + 500).toFixed(2) + " sq ft";
+        }
+    </script>
+
+    <!-- Add your footer section here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
